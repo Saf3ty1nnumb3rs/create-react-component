@@ -4,7 +4,7 @@
 
 `$ chmod  755 ./create-react-component/create-react-component.sh`
 
-`$ alias crc='./create-react-component/create-react-component.sh'`
+`$ alias crc='./create-react-component/create-react-component.sh (css,sass,styled-components)'`
 
 
 <!-- git fetch https://github.com/taylorosbourne/create-react-component.git -->
