@@ -18,7 +18,8 @@ else
     cd "$COMPONENTS"
 fi
 
-COMPONENTNAME=${1?Error: Enter a name for your component}
+STYLETYPE=${1?Error: Enter a style type for your component}
+COMPONENTNAME=${2?Error: Enter a name for your component}
 
 mkdir $COMPONENTNAME
 
@@ -26,9 +27,7 @@ echo "  create    $COMPONENTNAME"
 
 cd $COMPONENTNAME
 
-read -p "   Select a style type (css, sass, styled-components) " ANSWER
-
-case "$ANSWER" in
+case "$STYLETYPE" in
 [cC][sS][sS])
     touch $COMPONENTNAME.css
     echo "  create    $COMPONENTNAME.css"

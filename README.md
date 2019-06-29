@@ -13,4 +13,4 @@
 
 <!-- chmod 755 ./create-react-component.sh -->
 
-<!-- alias create-react-component='./create-react-component.sh' -->
+<!-- alias create-react-component='./create-react-component.sh (css,sass,styled-components)' -->
