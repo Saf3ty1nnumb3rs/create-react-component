@@ -26,15 +26,6 @@ touch $COMPONENTNAME-styles.js
 
 echo "// import styled from 'styled-components'" >$COMPONENTNAME-styles.js
 
-# Sass
-
-# touch $COMPONENTNAME.scss
-
-# Comment this out on  line 25-27
-# touch $COMPONENTNAME-styles.js
-
-# echo "// import styled from 'styled-components'" >$COMPONENTNAME-styles.js
-
 echo "import React from 'react';
 
 const $COMPONENTNAME = () => {
@@ -69,8 +60,14 @@ cd "../../../"
 
 echo "$COMPONENTNAME Component created"
 
-alias create-react-component='./create-react-component.sh'
-alias crc='./create-react-component.sh'
+# Sass
+
+# touch $COMPONENTNAME.scss
+
+# Comment this out on  line 25-27
+# touch $COMPONENTNAME-styles.js
+
+# echo "// import styled from 'styled-components'" >$COMPONENTNAME-styles.js
 
 # This  will continually add with each new component, no good
 
