@@ -18,8 +18,9 @@ else
     cd "$COMPONENTS"
 fi
 
-STYLETYPE=${1?Error: Enter a style type for your component}
-COMPONENTNAME=${2?Error: Enter a name for your component}
+COMPONENTTYPE=${1?Error: Enter a component type (functional/class)}
+STYLETYPE=${2?Error: Enter a style type (css/sass/styled-components)}
+COMPONENTNAME=${3?Error: Enter a name for your component}
 
 mkdir $COMPONENTNAME
 
@@ -48,11 +49,12 @@ export {} " >$COMPONENTNAME-styles.js
     ;;
 esac
 
-touch $COMPONENTNAME.jsx
+case "$COMPONENTTYPE" in
+[fF][uU][nN][cC][tT][iI][oO][nN])
+    touch $COMPONENTNAME.jsx
+    echo "  create    $COMPONENTNAME.jsx"
 
-echo "  create    $COMPONENTNAME.jsx"
-
-echo "import React from 'react';
+    echo "import React from 'react';
 
 const $COMPONENTNAME = () => {
     return (
@@ -63,6 +65,30 @@ const $COMPONENTNAME = () => {
 };
 
 export default $COMPONENTNAME;" >$COMPONENTNAME.jsx
+
+    ;;
+[cC][lL][aA][sS][sS])
+    touch $COMPONENTNAME.jsx
+    echo "  create    $COMPONENTNAME.jsx"
+
+    echo "import React, { Component } from 'react';
+
+class $COMPONENTNAME extends Component {
+    render() {
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+}
+
+export default $COMPONENTNAME;" >$COMPONENTNAME.jsx
+    ;;
+*)
+    echo "Please select a component type"
+    ;;
+esac
 
 touch $COMPONENTNAME.test.js
 
